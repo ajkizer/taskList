@@ -3,6 +3,7 @@ const taskList = document.querySelector(".collection");
 const clearBtn = document.querySelector(".clear-tasks");
 const filter = document.querySelector("#filter");
 const taskInput = document.querySelector("#task");
+const card = document.querySelector("#main");
 
 loadEventListeners();
 
@@ -12,6 +13,33 @@ function loadEventListeners() {
   clearBtn.addEventListener("click", clearTasks);
   filter.addEventListener("keyup", filterTasks);
   document.addEventListener("DOMContentLoaded", getTasks);
+  card.addEventListener("mouseover", showTasks);
+  card.addEventListener("mouseout", ghostTasks);
+  document.addEventListener("keyup", taskToggle);
+}
+
+let tasksOn = false;
+
+function showTasks() {
+  card.style.opacity = "1";
+  card.style.transitionDuration = ".3s";
+  tasksOn = true;
+}
+
+function taskToggle() {
+  if (!tasksOn) {
+    card.style.opacity = "1";
+    tasksOn = true;
+  } else {
+    card.style.opacity = ".1";
+    tasksOn = false;
+  }
+}
+
+function ghostTasks() {
+  card.style.opacity = ".1";
+  card.style.transitionDuration = ".9s";
+  tasksOn = false;
 }
 
 function filterTasks(e) {
