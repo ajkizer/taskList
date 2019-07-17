@@ -13,34 +13,33 @@ function loadEventListeners() {
   clearBtn.addEventListener("click", clearTasks);
   filter.addEventListener("keyup", filterTasks);
   document.addEventListener("DOMContentLoaded", getTasks);
-  card.addEventListener("mouseover", showTasks);
-  card.addEventListener("mouseout", ghostTasks);
-  document.addEventListener("keyup", taskToggle);
+  // card.addEventListener("mouseover", showTasks);
+  // card.addEventListener("mouseout", ghostTasks);
 }
 
-let tasksOn = false;
+// let tasksOn = false;
 
-function showTasks() {
-  card.style.opacity = "1";
-  card.style.transitionDuration = ".3s";
-  tasksOn = true;
-}
+// function showTasks() {
+//   card.style.opacity = "1";
+//   card.style.transitionDuration = ".3s";
+//   tasksOn = true;
+// }
 
-function taskToggle() {
-  if (!tasksOn) {
-    card.style.opacity = "1";
-    tasksOn = true;
-  } else {
-    card.style.opacity = ".1";
-    tasksOn = false;
-  }
-}
+// function taskToggle() {
+//   if (!tasksOn) {
+//     card.style.opacity = "1";
+//     tasksOn = true;
+//   } else {
+//     card.style.opacity = ".1";
+//     tasksOn = false;
+//   }
+// }
 
-function ghostTasks() {
-  card.style.opacity = ".1";
-  card.style.transitionDuration = ".9s";
-  tasksOn = false;
-}
+// function ghostTasks() {
+//   card.style.opacity = ".1";
+//   card.style.transitionDuration = ".9s";
+//   tasksOn = false;
+// }
 
 function filterTasks(e) {
   const text = e.target.value.toLowerCase();
